@@ -16,7 +16,10 @@ function parseData () {
 }
 
 function toggleDiv (hello, i, showOrHide) {
-    setTimeout(() => document.getElementById(hello.language).className = showOrHide, i * 250)
+    setTimeout(() => {
+        document.title = hello.hello
+        document.getElementById(hello.language).className = showOrHide
+    }, i * 250)
 }
 
 const data = [
