@@ -1,8 +1,22 @@
-
-body {
+div {
     display: flex;
     color: lightgray;
-    font-size: 5rem;
+    font-size: 3.05rem;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    padding-left: 1rem;
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 1s linear;
+    -webkit-transition: opacity 1s linear;
+    -moz-transition: opacity 1s linear;
+    -o-transition: opacity 1s linear;
+}
+.show {
+    opacity: 1;
+    transition: opacity 1s linear;
+    -webkit-transition: opacity 1s linear;
+    -moz-transition: opacity 1s linear;
+    -o-transition: opacity 1s linear;
 }

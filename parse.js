@@ -1,19 +1,28 @@
-function parseData () {
-    var hellos = data.map(d => d.hello)
-    hellos.forEach(hello => {    
-        console.log(hello)
+async function parseData () {
+    data.forEach((hello, i) => {    
         var div = document.createElement('div')
-        console.log(div)
-        div.innerHTML = hello
-        console.log(div)
-        document.body.appendChild(div)
+        div.id = hello.language
+        div.innerHTML = hello.hello
+        div.className = 'hide'
+        document.getElementById('container').appendChild(div)
+        showDiv(hello, i)
     })
+}
+// async function loopData () {
+//     data.forEach(hello => {
+//         if (hello.language === "Armenian")
+//             document.getElementById(hello.language).className = 'show', 1000
+//     })
+// }
+
+function showDiv (hello, i) {
+    setTimeout(() => document.getElementById(hello.language).className = 'show', i * 250)
 }
 
 const data = [
         {
             "language": "English",
-            "hello": "hello"
+            "hello": "Hello"
         },
         {
             "language": "Afrikaans",
@@ -64,10 +73,6 @@ const data = [
             "hello": "Hola"
         },
         {
-            "language": "Cebuano",
-            "hello": "Hello"
-        },
-        {
             "language": "Chichewa",
             "hello": "Moni"
         },
@@ -100,10 +105,6 @@ const data = [
             "hello": "Hallo"
         },
         {
-            "language": "English",
-            "hello": "Hello"
-        },
-        {
             "language": "Esperanto",
             "hello": "Saluton"
         },
@@ -112,20 +113,12 @@ const data = [
             "hello": "Tere"
         },
         {
-            "language": "Filipino",
-            "hello": "Hello"
-        },
-        {
             "language": "Finnish",
             "hello": "Hei"
         },
         {
             "language": "French",
             "hello": "Bonjour"
-        },
-        {
-            "language": "Frisian",
-            "hello": "Hello"
         },
         {
             "language": "Galician",
@@ -200,10 +193,6 @@ const data = [
             "hello": "こんにちは"
         },
         {
-            "language": "Javanese",
-            "hello": "Hello"
-        },
-        {
             "language": "Kannada",
             "hello": "ಹಲೋ"
         },
@@ -218,10 +207,6 @@ const data = [
         {
             "language": "Korean",
             "hello": "안녕하세요."
-        },
-        {
-            "language": "Kurdish (Kurmanji)",
-            "hello": "Hello"
         },
         {
             "language": "Kyrgyz",
@@ -252,20 +237,8 @@ const data = [
             "hello": "Здраво"
         },
         {
-            "language": "Malagasy",
-            "hello": "Hello"
-        },
-        {
-            "language": "Malay",
-            "hello": "Hello"
-        },
-        {
             "language": "Malayalam",
             "hello": "ഹലോ"
-        },
-        {
-            "language": "Maltese",
-            "hello": "Hello"
         },
         {
             "language": "Maori",
@@ -324,20 +297,8 @@ const data = [
             "hello": "Talofa"
         },
         {
-            "language": "Scots Gaelic",
-            "hello": "Hello"
-        },
-        {
             "language": "Serbian",
             "hello": "Здраво"
-        },
-        {
-            "language": "Sesotho",
-            "hello": "Hello"
-        },
-        {
-            "language": "Shona",
-            "hello": "Hello"
         },
         {
             "language": "Sindhi",
@@ -354,10 +315,6 @@ const data = [
         {
             "language": "Slovenian",
             "hello": "Pozdravljeni"
-        },
-        {
-            "language": "Somali",
-            "hello": "Hello"
         },
         {
             "language": "Spanish",
