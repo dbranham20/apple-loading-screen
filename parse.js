@@ -1,22 +1,22 @@
-async function parseData () {
+async function startLoading() {
+    parseData()
+    setInterval(() => parseData(), 30000)
+}
+
+function parseData () {
     data.forEach((hello, i) => {    
         var div = document.createElement('div')
         div.id = hello.language
         div.innerHTML = hello.hello
         div.className = 'hide'
         document.getElementById('container').appendChild(div)
-        showDiv(hello, i)
+        toggleDiv(hello, i, 'show')
+        toggleDiv(hello, i + 30, 'hide')
     })
 }
-// async function loopData () {
-//     data.forEach(hello => {
-//         if (hello.language === "Armenian")
-//             document.getElementById(hello.language).className = 'show', 1000
-//     })
-// }
 
-function showDiv (hello, i) {
-    setTimeout(() => document.getElementById(hello.language).className = 'show', i * 250)
+function toggleDiv (hello, i, showOrHide) {
+    setTimeout(() => document.getElementById(hello.language).className = showOrHide, i * 250)
 }
 
 const data = [
